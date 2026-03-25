@@ -9,12 +9,9 @@
 	src: url("./assets/fonts/Rubik-VariableFont_wght.ttf");
 }
 
-body {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+* {
+	transition: 0.2s;
 }
-
 html {
 	font-family: Rubic;
 }
@@ -22,16 +19,17 @@ html {
 @theme {
 	/* Primary */
 	--color-Purple-600: hsl(246, 80%, 60%);
-	--color-Orange-300(work): hsl(15, 100%, 70%);
-	--color-Blue-300(play): hsl(195, 74%, 62%);
-	--color-Pink-400(study): hsl(348, 100%, 68%);
-	--color-Green-400(exercise): hsl(145, 58%, 55%);
-	--color-Purple-700(social): hsl(264, 64%, 52%);
-	--color-Yellow-300(self care): hsl(43, 84%, 65%);
+	--color-Orange-300: hsl(15, 100%, 70%);
+	--color-Blue-300: hsl(195, 74%, 62%);
+	--color-Pink-400: hsl(348, 100%, 68%);
+	--color-Green-400: hsl(145, 58%, 55%);
+	--color-Purple-700: hsl(264, 64%, 52%);
+	--color-Yellow-300: hsl(43, 84%, 65%);
 
 	/* Neutral */
 	--color-Navy-950: hsl(226, 43%, 10%);
 	--color-Navy-900: hsl(235, 46%, 20%);
 	--color-Purple-500: hsl(235, 45%, 61%);
+	--color-Purple-900: hsl(235, 46%, 35%);
 	--color-Navy-200: hsl(236, 100%, 87%);
 }

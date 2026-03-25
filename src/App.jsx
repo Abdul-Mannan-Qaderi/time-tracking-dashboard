@@ -1,42 +1,35 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import profile from "./assets/images/image-jeremy.png";
+import ProfileCard from "./components/ProfileCard";
+import Card from "./components/Card";
+
+import play from "./assets/images/icon-play.svg";
+import exercise from "./assets/images/icon-exercise.svg";
+import self_care from "./assets/images/icon-self-care.svg";
+import social from "./assets/images/icon-social.svg";
+import study from "./assets/images/icon-study.svg";
+import work from "./assets/images/icon-work.svg";
+import { useEnv } from "./context/MyContext";
+
+const icons = [work, play, study, exercise, social, self_care];
 
 export default function App() {
-	const [isDark, setIsDark] = useState(false);
-
-	useEffect(() => {
-		document.documentElement.classList.toggle("dark", isDark);
-	}, [isDark]);
-
+	const { setIsDark, data, timeFrame } = useEnv();
 	return (
 		<main className="bg-Navy-950 text-white p-6 min-h-dvh">
-			<div className="profile-card bg-Navy-900 rounded-2xl">
-				<div className="bg-Purple-600 rounded-2xl p-8">
-					<div className="flex justify-start items-center gap-5">
-						<img
-							src={profile}
-							className="border-3 rounded-full h-20"
-							alt="profile"
-						/>
-						<div>
-							<p className="text-Navy-200 text-lg mb-0.5">Report for</p>
-							<h1 className="text-2xl font-light">Jeremy Robson</h1>
-						</div>
-					</div>
-				</div>
-				<div className="flex justify-between items-center px-8 py-6 text-lg">
-					<button className="text-Purple-500 hover:text-white">Daily</button>
-					<button>Weekly</button>
-					<button className="text-Purple-500 hover:text-white">Monthly</button>
-				</div>
+			<div className="flex flex-col gap-8">
+				<ProfileCard />
+				{data.map((item, index) => (
+					<Card
+						key={index}
+						bg={item.bg}
+						img={icons[index]}
+						title={item.title}
+						hours={item.timeframes[timeFrame].current}
+						prev_hours={item.timeframes[timeFrame].previous}
+					/>
+				))}
 			</div>
-			{/* <button
-				className="bg-amber-900 p-4 rounded-full text-white hover:cursor-pointer"
-				onClick={() => setIsDark((prev) => !prev)}
-			>
-				Toggle
-			</button> */}
 		</main>
 	);
 }

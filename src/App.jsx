@@ -17,7 +17,7 @@ export default function App() {
 	const { data, timeFrame } = useEnv();
 	return (
 		<main className="bg-Navy-950 text-white p-6 min-h-dvh flex justify-center items-center">
-			<div className="grid grid-cols-1 max-w-[1440px] m-auto gap-8 md:grid-cols-2 lg:grid-cols-4">
+			<div className="grid grid-cols-1 w-5xl max-w-[1440px] m-auto gap-8 md:grid-cols-2 lg:grid-cols-4">
 				<ProfileCard />
 				{data.map((item, index) => (
 					<Card

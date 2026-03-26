@@ -6,7 +6,7 @@ export default function ProfileCard() {
 
 	return (
 		<div className="profile-card bg-Navy-900 rounded-2xl md:col-span-2 lg:col-span-1 lg:row-span-2">
-			<div className="bg-Purple-600 rounded-2xl p-8 pb-13">
+			<div className="bg-Purple-600 rounded-2xl p-8 lg:pb-20">
 				<div className="flex justify-start items-center gap-5 lg:flex-col lg:items-start">
 					<img
 						src={profile}
@@ -15,7 +15,7 @@ export default function ProfileCard() {
 					/>
 					<div>
 						<p className="text-Navy-200 text-lg mb-0.5">Report for</p>
-						<h1 className="text-2xl font-light md:text-3xl lg:text-5xl">Jeremy Robson</h1>
+						<h1 className="text-2xl font-light md:text-3xl lg:text-4xl">Jeremy Robson</h1>
 					</div>
 				</div>
 			</div>

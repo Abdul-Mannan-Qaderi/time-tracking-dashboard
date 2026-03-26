@@ -13,8 +13,12 @@ export default function ContextProvider({ children }) {
 
 	useEffect(() => {
 		fetch(`${import.meta.env.BASE_URL}data.json`)
-			.then((res) => res.json())
-			.then((data) => setData(data));
+			.then((res) => {
+				if (!res.ok) throw new Error("Failed to fetch");
+				return res.json();
+			})
+			.then((data) => setData(data))
+			.catch((err) => console.error(err));
 	}, []);
 
 	const value = {
